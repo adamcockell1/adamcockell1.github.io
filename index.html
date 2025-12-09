@@ -4,34 +4,26 @@
         <meta charset="utf-8" name="viewport" content="width=device-width" type="text/html" />
         <title>What The Fork</title>
         <link rel="stylesheet" href="./src/style.css" type="text/css" />
-        <link rel="icon" href="./assets/icon.ico" type="image/icon" />
         <script src="./src/app.js" type="text/javascript" defer></script>
         <noscript>Enable JavaScript to view the full site.</noscript>
     </head>
     <body>
-        <div>
-            <img src="./assets/icon.ico" alt="What The Fork Icon" class="icon" />
-        </div>
         <div class="navBar">
-            <div class="navIconSpace"></div>
-            <div class="navElement">
-                <a href="https://github.com/adamcockell1/what-the-fork">
-                    <button class="navButton" type="button" disabled="true">WHAT THE FORK</button>
+            <div class="navPadding">
+                <button class="navButton" onclick="theme()" type="button">&#x2630;</button>
+            </div>
+            <div class="navTitle">
+                <a href="https://adamcockell1.github.io">
+                    <button class="navButton" type="button">ADAM COCKELL</button>
                 </a>
             </div>
-            <div class="navElement">
-                <button class="navButton themeBtn" onclick="theme()" type="button" disabled="true">
-                    DARK MODE
-                </button>
-            </div>
-            <div class="navElement">
-                <button class="navButton colorBtn" onclick="color()" type="button" disabled="true">
-                    FULL COLOR
-                </button>
+            <div class="navPadding">
+                <button class="navButton" onclick="color()" type="button">&#x2699;</button>
             </div>
         </div>
-        <div class="main">
-            <p>FIN</p>
+        <div class="main"></div>
+        <div class="fin">
+            <button onclick="scrollToTop()" type="button">FIN</button>
         </div>
     </body>
 </html>
