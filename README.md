@@ -1,25 +1,13 @@
-# What The Fork
+# Showcase/Portfolio Website
 
-[Click here](https://adamcockell1.github.io/what-the-fork/) to visit the site.
+[Click here](https://adamcockell1.github.io) to visit the site.
 
-The intention behind this project is to create a striking visual web experience using javascript animations and effects and responsive design. More or less a tech demo/testing grounds for learning Javascript.
+The intention behind this project is to create a striking visual web experience using javascript animations and effects and responsive design. More or less a tech demo/testing grounds for learning Javascript while showcasing personal projects and passions.
 
 Inspired by:
 
 -   [Hyperplexed](https://www.youtube.com/@Hyperplexed)
 -   [Fireship](https://www.youtube.com/@Fireship)
-
-## Contributor Guidelines
-
-This project uses Prettier for code formatting. Ensure that Prettier is downloaded and enabled for this project before continuing.
-
-1. Commit changes to a new branch, not `main`
-2. Branches must follow a naming scheme:
-    - `f/<branchName>` for feature additions
-    - `b/<branchName>` for bugfixes
-    - `o/<branchName>` for other types
-3. Fill out the pull request template upon committing to a new branch
-4. All commits and pull requests must use a relevant [gitmoji](https://gitmoji.dev/)
 
 ## Known Issues
 
