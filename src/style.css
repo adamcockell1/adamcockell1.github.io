@@ -2,14 +2,13 @@
 
 @font-face {
     font-family: Roboto;
-    src: url('../assets/font/RobotoCondensed-Regular.ttf');
+    src: url('../assets/font/RobotoCondensed-Bold.ttf');
 }
 
 :root {
-    --bgColor: #050001;
-    --iconColor: #bf122d;
+    --bgColor: #000;
+    --accColor: #bf122d;
     --fontColor: #fff;
-    --lineSize: 3px solid;
     box-sizing: border-box;
     text-decoration: none;
     cursor: default;
@@ -24,7 +23,7 @@ html {
 
 * {
     font-family: Roboto;
-    font-size: 30px;
+    font-size: 20px;
     margin: 0px;
 }
 
@@ -32,78 +31,91 @@ html {
 
 img {
     pointer-events: none;
-    -webkit-user-select: none;
     user-select: none;
 }
 
 /* Navbar style */
 
 .navBar {
+    background-color: var(--accColor);
     position: fixed;
     display: flex;
+    width: 100%;
+    height: 4rem;
+    user-select: none;
     transition: 0.5s;
-    width: 100%;
-    border-bottom: var(--lineSize);
+    translate: 0 -2rem;
 }
 
-.navBar > .navTitle {
-    width: 100%;
-    border-left: var(--lineSize);
-    border-right: var(--lineSize);
-}
-
-.navBar > .navPadding {
-    width: 100px;
+.navBar:hover {
+    translate: 0px;
 }
 
 .navButton {
     background-color: transparent;
     color: var(--fontColor);
-    height: 100px;
-    padding: none;
+    height: 100%;
     width: 100%;
-    transition: 0.5s;
+    padding: none;
     border: none;
+    transition: 0.5s;
 }
 
 .navButton:hover {
-    background-color: #fff4;
+    background-color: var(--accColor);
+    cursor: pointer;
 }
 
-/* Dropdown style */
-
-.dropdown {
-    position: fixed;
+.navMarquee {
+    color: var(--bgColor);
     display: flex;
+    align-items: end;
+    padding-bottom: 0.33rem;
+    width: 100%;
+    overflow: clip;
+    transition: 0.5s;
 }
 
-.dropdownItem {
-    background-color: var(--bgColor);
-    color: var(--fontColor);
-    border: var(--lineSize);
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
+.navMarquee:hover {
+    filter: opacity(50%) blur(2px);
+    transform: scale(3);
+    translate: 0 -3rem;
 }
 
-.dropdownItem:hover {
-    background-color: #fff4;
+.navMarqueeText {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    flex-shrink: 0;
+    min-width: 100%;
+    gap: 10vw;
+    animation: scroll 7s linear infinite;
+    transition: 0.5s;
+}
+
+.navMarqueeText:hover {
+    gap: 1vw;
+}
+
+.navMask {
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 3rem,
+        black calc(100% - 3rem),
+        transparent
+    );
+}
+
+@keyframes scroll {
+    to {
+        transform: translateX(calc(-50% - 5vw));
+    }
 }
 
 /* Main content style */
 
 .main {
-    background-image: radial-gradient(
-        at 100% 120%,
-        var(--iconColor),
-        #5f0916,
-        #2f040b,
-        #170205,
-        #0b0102,
-        var(--bgColor)
-    );
-    padding: 140vh 20px 20px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,9 +123,6 @@ img {
 }
 
 .fin {
-    padding: 50vh 20px 50vh 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 4rem;
 }
