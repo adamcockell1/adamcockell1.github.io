@@ -31,3 +31,20 @@ function toggleColor() {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY <= 1000) {
+        // Disable the navbar on the splash screen
+        for (let i = 0; i < navButtons.length; i++) {
+            navButtons[i].disabled = true;
+        }
+        navBar.style.opacity = "0";
+    } else {
+        // Re-enable the navbar after scrolling past the splash screen
+        navBar.style.opacity = "1";
+        for (let i = 0; i < navButtons.length; i++) {
+            navButtons[i].disabled = false;
+        }
+    }
+});

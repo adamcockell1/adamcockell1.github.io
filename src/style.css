@@ -23,7 +23,7 @@ html {
 
 * {
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 1rem;
     margin: 0px;
 }
 
@@ -44,11 +44,6 @@ img {
     height: 4rem;
     user-select: none;
     transition: 0.5s;
-    translate: 0 -2rem;
-}
-
-.navBar:hover {
-    translate: 0px;
 }
 
 .navButton {
@@ -66,51 +61,25 @@ img {
     cursor: pointer;
 }
 
-.navMarquee {
-    color: var(--bgColor);
+/* Splash screen style */
+
+.splash {
     display: flex;
-    align-items: end;
-    padding-bottom: 0.33rem;
     width: 100%;
-    overflow: clip;
-    transition: 0.5s;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.navMarquee:hover {
-    filter: opacity(50%) blur(2px);
-    transform: scale(3);
-    translate: 0 -3rem;
+.splashTitle {
+    font-size: 5rem;
+    transform: translateY(-5%);
 }
 
-.navMarqueeText {
-    display: flex;
-    justify-content: space-around;
-    align-items: end;
-    flex-shrink: 0;
-    min-width: 100%;
-    gap: 10vw;
-    animation: scroll 7s linear infinite;
-    transition: 0.5s;
-}
-
-.navMarqueeText:hover {
-    gap: 1vw;
-}
-
-.navMask {
-    mask-image: linear-gradient(
-        to right,
-        transparent,
-        black 3rem,
-        black calc(100% - 3rem),
-        transparent
-    );
-}
-
-@keyframes scroll {
-    to {
-        transform: translateX(calc(-50% - 5vw));
-    }
+.splashText {
+    font-size: 2rem;
+    transform: translateY(25%);
 }
 
 /* Main content style */
@@ -124,5 +93,5 @@ img {
 
 .fin {
     width: 100%;
-    height: 4rem;
+    height: 100px;
 }
