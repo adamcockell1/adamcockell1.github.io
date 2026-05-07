@@ -1,50 +1,38 @@
 'use strict';
 
-const navBar = document.querySelector('.navBar');
-const navButtons = document.getElementsByClassName('navButton');
-const main = document.querySelector('.main');
+/* Constants */
 
-/* Settings functions */
+const nav = document.querySelector('nav');
+const navButtons = document.querySelectorAll('.navButton');
+const splash = document.querySelector('#splash');
+const fin = document.querySelector('#fin');
 
-let filters = ['invert(0)', 'grayscale(0)'];
+/* Functions */
 
-function toggleTheme() {
-    if (filters.includes('invert(1)')) {
-        filters[0] = 'invert(0)';
-    } else {
-        filters[0] = 'invert(1)';
-    }
-    document.documentElement.style.filter = filters.join(' ');
-}
+const scrollToTop = () => {
+    window.scrollTo({ top: 0 });
+};
 
-function toggleColor() {
-    if (filters.includes('grayscale(1)')) {
-        filters[1] = 'grayscale(0)';
-    } else {
-        filters[1] = 'grayscale(1)';
-    }
-    document.documentElement.style.filter = filters.join(' ');
-}
+/* Observers */
 
-/* Scroll functions */
+const toggleNav = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const isVisible = entry.isIntersecting;
+        nav.style.opacity = isVisible ? '0' : '1';
+        nav.style.visibility = isVisible ? 'hidden' : 'visible';
+        navButtons.forEach(btn => {
+            btn.disabled = isVisible;
+            btn.setAttribute('aria-hidden', isVisible);
+        });
+    });
+}, { threshold: 0.1 });
 
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
-window.addEventListener("scroll", () => {
+/* Initialisation */
 
-    if (window.scrollY <= window.innerHeight) {
-        // Disable the navbar on the splash screen
-        for (let i = 0; i < navButtons.length; i++) {
-            navButtons[i].disabled = true;
-        }
-        navBar.style.opacity = "0";
-    } else {
-        // Re-enable the navbar after scrolling past the splash screen
-        navBar.style.opacity = "1";
-        for (let i = 0; i < navButtons.length; i++) {
-            navButtons[i].disabled = false;
-        }
-    }
-});
+const init = () => {
+    if (splash) toggleNav.observe(splash);
+    fin?.addEventListener('click', scrollToTop);
+};
+
+document.addEventListener('DOMContentLoaded', init);

@@ -6,90 +6,68 @@
 }
 
 :root {
-    --bgColor: #000;
     --accColor: #bf122d;
+    --bgColor: #000;
     --fontColor: #fff;
+    --transitionSpeed: 0.5s;
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
-    text-decoration: none;
-    cursor: default;
+    margin: 0;
 }
 
 html {
     background-color: var(--bgColor);
     color: var(--fontColor);
-    filter: invert(0) grayscale(0);
-}
-
-* {
     font-family: Share Tech Mono;
-    font-size: 1rem;
-    margin: 0px;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    text-decoration: none;
 }
 
-/* Image style */
+/* Nav style */
 
-img {
-    pointer-events: none;
-    user-select: none;
-}
-
-/* Navbar style */
-
-.navBar {
+nav {
     background-color: var(--accColor);
-    position: fixed;
     display: flex;
-    width: 100%;
     height: 4rem;
+    opacity: 0;
+    position: fixed;
+    transition: opacity var(--transitionSpeed), visibility var(--transitionSpeed);
     user-select: none;
-    transition: 0.5s;
-    opacity: 0%;
+    width: 100%;
+    z-index: 100;
 }
 
 .navButton {
     background-color: transparent;
-    color: var(--fontColor);
-    height: 100%;
-    width: 100%;
-    padding: none;
     border: none;
-    transition: 0.5s;
+    color: var(--fontColor);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.2rem;
+    height: 100%;
+    transition: background-color var(--transitionSpeed);
+    width: 100%;
 }
 
 .navButton:hover {
     background-color: var(--accColor);
-    cursor: pointer;
 }
 
-/* Splash screen style */
-
-.splash {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.splashTitle {
-    font-size: 7rem;
-    transform: translateY(-5%);
-}
-
-.splashText {
-    font-size: 2rem;
-    transform: translateY(25%);
+.navButton:disabled {
+    cursor: default;
 }
 
 /* Main content style */
 
-.main {
+main {
+    align-items: center;
     display: flex;
-    width: 100%;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    width: 100%;
 }
 
 .mainTitle {
@@ -97,11 +75,36 @@ img {
     padding: 5rem 0;
 }
 
-.projects, .gallery, .blog {
-    height: 50vh;
+#splash {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100dvh;
+    text-align: center;
+    user-select: none;
 }
 
-.fin {
-    width: 100%;
+.splashTitle {
+    font-size: clamp(4rem, 10dvw, 7rem);
+    line-height: 1.5;
+}
+
+.splashText {
+    font-size: 1.5rem;
+}
+
+#projects, #gallery, #blog {
+    min-height: 50dvh;
+}
+
+/* Footer style */
+
+footer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     height: 5rem;
+    justify-content: center;
+    width: 100%;
 }

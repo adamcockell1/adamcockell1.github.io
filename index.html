@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" name="viewport" content="width=device-width" type="text/html" />
+        <meta charset="utf-8" />
+        <meta name="description" content="My personal portfolio site" />
         <title>Adam's Portfolio</title>
         <link rel="stylesheet" href="./src/style.css" type="text/css" />
         <link rel="icon" href="./assets/icon.ico" type="image/icon" />
@@ -9,29 +10,29 @@
         <noscript>Enable JavaScript to view the full site.</noscript>
     </head>
     <body>
-        <div class="navBar">
-            <button class="navButton">NAVBAR</button>
-        </div>
-        <div class="splash">
-            <h1 class="splashTitle">ADAMS PORTFOLIO</h1>
-            <h3 class="splashText">fun splash text</h3>
-        </div>
-        <div class="main">
-            <div class="about">
+        <nav>
+            <button class="navButton" type="button">NAVBAR</button>
+        </nav>
+        <main>
+            <section id="splash">
+                <h1 class="splashTitle">ADAMS PORTFOLIO</h1>
+                <h3 class="splashText">fun splash text</h3>
+            </section>
+            <section id="about">
                 <p class="mainText">about me text</p>
-            </div>
-            <div class="projects">
+            </section>
+            <section id="projects">
                 <h2 class="mainTitle">PROJECTS</h2>
-            </div>
-            <div class="gallery">
+            </section>
+            <section id="gallery">
                 <h2 class="mainTitle">GALLERY</h2>
-            </div>
-            <div class="blog">
+            </section>
+            <section id="blog">
                 <h2 class="mainTitle">BLOG</h2>
-            </div>
-        </div>
-        <div class="fin">
-            <button class="navButton" onclick="scrollToTop()" type="button">FIN</button>
-        </div>
+            </section>
+        </main>
+        <footer>
+            <button class="navButton" type="button" id="fin">FIN</button>
+        </footer>
     </body>
 </html>
