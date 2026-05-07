@@ -20,10 +20,7 @@ const toggleNav = new IntersectionObserver((entries) => {
         const isVisible = entry.isIntersecting;
         nav.style.opacity = isVisible ? '0' : '1';
         nav.style.visibility = isVisible ? 'hidden' : 'visible';
-        navButtons.forEach(btn => {
-            btn.disabled = isVisible;
-            btn.setAttribute('aria-hidden', isVisible);
-        });
+        navButtons.forEach(btn => { btn.disabled = isVisible });
     });
 }, { threshold: 0.1 });
 

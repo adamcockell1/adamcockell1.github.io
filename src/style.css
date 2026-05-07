@@ -94,8 +94,9 @@ main {
     font-size: 1.5rem;
 }
 
-#projects, #gallery, #blog {
+#about, #projects, #gallery, #blog {
     min-height: 50dvh;
+    width: 80dvw
 }
 
 /* Footer style */
