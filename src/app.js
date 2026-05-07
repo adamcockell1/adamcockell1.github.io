@@ -5,12 +5,11 @@
 const nav = document.querySelector('nav');
 const navButtons = document.querySelectorAll('.navButton');
 const splash = document.querySelector('#splash');
-const fin = document.querySelector('#fin');
 
 /* Functions */
 
-const scrollToTop = () => {
-    window.scrollTo({ top: 0 });
+const scrollToSection = (section) => {
+    section?.scrollIntoView({ block: 'start' });
 };
 
 /* Observers */
@@ -20,7 +19,7 @@ const toggleNav = new IntersectionObserver((entries) => {
         const isVisible = entry.isIntersecting;
         nav.style.opacity = isVisible ? '0' : '1';
         nav.style.visibility = isVisible ? 'hidden' : 'visible';
-        navButtons.forEach(btn => { btn.disabled = isVisible });
+        navButtons.forEach(button => { button.disabled = isVisible });
     });
 }, { threshold: 0.1 });
 
@@ -28,8 +27,14 @@ const toggleNav = new IntersectionObserver((entries) => {
 /* Initialisation */
 
 const init = () => {
+    // Hide navbar when splash screen is visible
     if (splash) toggleNav.observe(splash);
-    fin?.addEventListener('click', scrollToTop);
+    // Scroll to section for navbar buttons
+    navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            scrollToSection(document.querySelector(button.getAttribute('data-target')));
+        });
+    });
 };
 
 document.addEventListener('DOMContentLoaded', init);

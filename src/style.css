@@ -1,13 +1,14 @@
 /* Global style */
 
 @font-face {
-    font-family: Share Tech Mono;
+    font-family: ShareTechMono;
     src: url('../assets/fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf');
 }
 
 :root {
-    --accColor: #bf122d;
-    --bgColor: #000;
+    --accentColor: #bf122d;
+    --backgroundColor: #000;
+    --borderWeight: 0.15rem;
     --fontColor: #fff;
     --transitionSpeed: 0.5s;
 }
@@ -18,9 +19,9 @@
 }
 
 html {
-    background-color: var(--bgColor);
+    background-color: var(--backgroundColor);
     color: var(--fontColor);
-    font-family: Share Tech Mono;
+    font-family: ShareTechMono;
     font-size: 16px;
     scroll-behavior: smooth;
     text-decoration: none;
@@ -29,7 +30,8 @@ html {
 /* Nav style */
 
 nav {
-    background-color: var(--accColor);
+    background-color: var(--backgroundColor);
+    border-bottom: var(--borderWeight) solid var(--fontColor);
     display: flex;
     height: 4rem;
     opacity: 0;
@@ -38,6 +40,10 @@ nav {
     user-select: none;
     width: 100%;
     z-index: 100;
+}
+
+nav .navButton:not(.navButton:last-child) {
+    border-right: var(--borderWeight) solid var(--fontColor);
 }
 
 .navButton {
@@ -53,7 +59,7 @@ nav {
 }
 
 .navButton:hover {
-    background-color: var(--accColor);
+    background-color: var(--accentColor);
 }
 
 .navButton:disabled {
@@ -95,7 +101,7 @@ main {
 }
 
 #about, #projects, #gallery, #blog {
-    min-height: 50dvh;
+    padding: 8rem 0;
     width: 80dvw
 }
 
