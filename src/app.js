@@ -34,7 +34,7 @@ function scrollToTop() {
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY <= 1000) {
+    if (window.scrollY <= window.innerHeight) {
         // Disable the navbar on the splash screen
         for (let i = 0; i < navButtons.length; i++) {
             navButtons[i].disabled = true;

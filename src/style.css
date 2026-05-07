@@ -2,7 +2,12 @@
 
 @font-face {
     font-family: Roboto;
-    src: url('../assets/font/RobotoCondensed-Bold.ttf');
+    src: url('../assets/fonts/Roboto/RobotoCondensed-Bold.ttf');
+}
+
+@font-face {
+    font-family: Share Tech Mono;
+    src: url('../assets/fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf');
 }
 
 :root {
@@ -12,7 +17,6 @@
     box-sizing: border-box;
     text-decoration: none;
     cursor: default;
-    transition: 0.5s;
 }
 
 html {
@@ -44,9 +48,11 @@ img {
     height: 4rem;
     user-select: none;
     transition: 0.5s;
+    opacity: 0%;
 }
 
 .navButton {
+    font-family: Share Tech Mono;
     background-color: transparent;
     color: var(--fontColor);
     height: 100%;
@@ -73,11 +79,12 @@ img {
 }
 
 .splashTitle {
-    font-size: 5rem;
+    font-size: 7rem;
     transform: translateY(-5%);
 }
 
 .splashText {
+    font-family: Share Tech Mono;
     font-size: 2rem;
     transform: translateY(25%);
 }
@@ -86,6 +93,7 @@ img {
 
 .main {
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -93,5 +101,5 @@ img {
 
 .fin {
     width: 100%;
-    height: 100px;
+    height: 5rem;
 }
