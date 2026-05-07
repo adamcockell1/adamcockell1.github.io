@@ -1,11 +1,6 @@
 /* Global style */
 
 @font-face {
-    font-family: Roboto;
-    src: url('../assets/fonts/Roboto/RobotoCondensed-Bold.ttf');
-}
-
-@font-face {
     font-family: Share Tech Mono;
     src: url('../assets/fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf');
 }
@@ -26,7 +21,7 @@ html {
 }
 
 * {
-    font-family: Roboto;
+    font-family: Share Tech Mono;
     font-size: 1rem;
     margin: 0px;
 }
@@ -52,7 +47,6 @@ img {
 }
 
 .navButton {
-    font-family: Share Tech Mono;
     background-color: transparent;
     color: var(--fontColor);
     height: 100%;
@@ -84,7 +78,6 @@ img {
 }
 
 .splashText {
-    font-family: Share Tech Mono;
     font-size: 2rem;
     transform: translateY(25%);
 }
@@ -102,10 +95,6 @@ img {
 .mainTitle {
     font-size: 4rem;
     padding: 5rem 0;
-}
-
-.mainText {
-    font-family: Share Tech Mono;
 }
 
 .projects, .gallery, .blog {
