@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: ShareTechMono;
-    src: url('../assets/fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf');
+    src: url('../../assets/fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf');
 }
 
 :root {
@@ -78,7 +78,7 @@ main {
 
 .mainTitle {
     font-size: 4rem;
-    padding: 5rem 0;
+    padding-bottom: 4rem;
 }
 
 #splash {
@@ -92,7 +92,7 @@ main {
 }
 
 .splashTitle {
-    font-size: clamp(4rem, 10dvw, 7rem);
+    font-size: clamp(4rem, 10dvw, 8rem);
     line-height: 1.5;
 }
 
