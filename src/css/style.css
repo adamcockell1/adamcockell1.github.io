@@ -8,7 +8,7 @@
 :root {
     --accentColor: #bf122d;
     --backgroundColor: #000;
-    --borderWeight: 0.15rem;
+    --borderWeight: 0.1rem;
     --fontColor: #fff;
     --transitionSpeed: 0.5s;
 }
@@ -24,6 +24,10 @@ html {
     font-family: ShareTechMono;
     font-size: 16px;
     scroll-behavior: smooth;
+    text-transform: lowercase;
+}
+
+a {
     text-decoration: none;
 }
 
@@ -46,13 +50,16 @@ nav .navButton:not(.navButton:last-child) {
 }
 
 .navButton {
+    align-items: center;
     background-color: transparent;
     border: none;
     color: var(--fontColor);
     cursor: pointer;
+    display: flex;
     font-family: inherit;
     font-size: 1.2rem;
     height: 100%;
+    justify-content: center;
     text-transform: uppercase;
     transition: background-color var(--transitionSpeed);
     width: 100%;
@@ -60,6 +67,17 @@ nav .navButton:not(.navButton:last-child) {
 
 .navButton:hover, .navButton:focus {
     background-color: var(--accentColor);
+}
+
+.navButtonSquare {
+    aspect-ratio: 1 / 1;
+    width: auto;
+}
+
+.navButtonIcon {
+    fill: var(--fontColor);
+    height: 40%;
+    width: 40%;
 }
 
 .navDisabled {

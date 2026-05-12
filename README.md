@@ -16,4 +16,5 @@ Inspiration:
 ## Todo
 
 - Replace icon.png with a proper svg logo
-- Dynamic splash text on welcome page
+- Add dynamic splash text
+- Add open graph tags
