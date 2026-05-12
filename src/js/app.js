@@ -8,33 +8,28 @@ const splash = document.querySelector('#splash');
 
 /* Functions */
 
-const scrollToSection = (section) => {
-    section?.scrollIntoView({ block: 'start' });
+const scrollToSection = (button) => {
+    button.addEventListener('click', () => {
+        document.querySelector(button.dataset.target)?.scrollIntoView();
+        button.blur();
+    });
 };
 
 /* Observers */
 
 const toggleNav = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        const isVisible = entry.isIntersecting;
-        nav.style.opacity = isVisible ? '0' : '1';
-        nav.style.visibility = isVisible ? 'hidden' : 'visible';
-        navButtons.forEach(button => { button.disabled = isVisible });
+        nav.classList.toggle('navDisabled', entry.isIntersecting);
     });
 }, { threshold: 0.1 });
-
 
 /* Initialisation */
 
 const init = () => {
     // Hide navbar when splash screen is visible
     if (splash) toggleNav.observe(splash);
-    // Scroll to section for navbar buttons
-    navButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            scrollToSection(document.querySelector(button.getAttribute('data-target')));
-        });
-    });
+    // Scroll to section functionality for navbar buttons
+    navButtons.forEach(button => scrollToSection(button));
 };
 
 document.addEventListener('DOMContentLoaded', init);

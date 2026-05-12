@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: ShareTechMono;
-    src: url('../../assets/fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf');
+    src: url('../../assets/fonts/Share_Tech_Mono/ShareTechMono-Regular.woff2');
 }
 
 :root {
@@ -34,7 +34,6 @@ nav {
     border-bottom: var(--borderWeight) solid var(--fontColor);
     display: flex;
     height: 4rem;
-    opacity: 0;
     position: fixed;
     transition: opacity var(--transitionSpeed), visibility var(--transitionSpeed);
     user-select: none;
@@ -44,6 +43,12 @@ nav {
 
 nav .navButton:not(.navButton:last-child) {
     border-right: var(--borderWeight) solid var(--fontColor);
+}
+
+.navDisabled {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
 }
 
 .navButton {
@@ -58,12 +63,8 @@ nav .navButton:not(.navButton:last-child) {
     width: 100%;
 }
 
-.navButton:hover {
+.navButton:hover, .navButton:focus {
     background-color: var(--accentColor);
-}
-
-.navButton:disabled {
-    cursor: default;
 }
 
 /* Main content style */
