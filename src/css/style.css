@@ -45,12 +45,6 @@ nav .navButton:not(.navButton:last-child) {
     border-right: var(--borderWeight) solid var(--fontColor);
 }
 
-.navDisabled {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-}
-
 .navButton {
     background-color: transparent;
     border: none;
@@ -59,12 +53,19 @@ nav .navButton:not(.navButton:last-child) {
     font-family: inherit;
     font-size: 1.2rem;
     height: 100%;
+    text-transform: uppercase;
     transition: background-color var(--transitionSpeed);
     width: 100%;
 }
 
 .navButton:hover, .navButton:focus {
     background-color: var(--accentColor);
+}
+
+.navDisabled {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
 }
 
 /* Main content style */
@@ -80,6 +81,7 @@ main {
 .mainTitle {
     font-size: 4rem;
     padding-bottom: 4rem;
+    text-transform: uppercase;
 }
 
 #splash {
@@ -95,6 +97,7 @@ main {
 .splashTitle {
     font-size: clamp(4rem, 10dvw, 8rem);
     line-height: 1.5;
+    text-transform: uppercase;
 }
 
 .splashText {

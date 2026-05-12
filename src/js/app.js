@@ -8,7 +8,7 @@ const splash = document.querySelector('#splash');
 
 /* Functions */
 
-const scrollToSection = (button) => {
+const setEventListener = (button) => {
     button.addEventListener('click', () => {
         document.querySelector(button.dataset.target)?.scrollIntoView();
         button.blur();
@@ -29,7 +29,7 @@ const init = () => {
     // Hide navbar when splash screen is visible
     if (splash) toggleNav.observe(splash);
     // Scroll to section functionality for navbar buttons
-    navButtons.forEach(button => scrollToSection(button));
+    navButtons.forEach(button => setEventListener(button));
 };
 
 document.addEventListener('DOMContentLoaded', init);
